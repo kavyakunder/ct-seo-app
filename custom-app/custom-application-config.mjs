@@ -5,8 +5,8 @@ import { entryPointUriPathToPermissionKeys } from '@commercetools-frontend/appli
  */
 const config = {
   name: 'Custom Seo',
-  entryPointUriPath: "${env:ENTRY_POINT_URI_PATH}",
-  cloudIdentifier: "${env:CLOUD_IDENTIFIER}",
+  entryPointUriPath: '${env:ENTRY_POINT_URI_PATH}',
+  cloudIdentifier: '${env:CLOUD_IDENTIFIER}',
   headers: {
     csp: {
       'connect-src': [
@@ -31,24 +31,24 @@ const config = {
   },
   env: {
     development: {
-      initialProjectKey: 'jj-custom-app',
+      initialProjectKey: '${env:CTP_PROJECT_KEY}',
     },
     production: {
       applicationId: '${env:CUSTOM_APPLICATION_ID}',
-      url: '${env:APP_URL}',
+      url: '${env:APPLICATION_URL}',
     },
   },
 
   additionalEnv: {
     applicationId: '${env:CUSTOM_APPLICATION_ID}',
-    url: '${env:APP_URL}',
+    url: '${env:APPLICATION_URL}',
     authUrl: '${env:CTP_AUTH_URL}',
     apiUrl: '${env:CTP_API_URL}',
     projectKey: '${env:CTP_PROJECT_KEY}',
     clientSecret: '${env:CTP_CLIENT_SECRET}',
     clientId: '${env:CTP_CLIENT_ID}',
-    scopes: '${env:CTP_SCOPES}',
-    entryPointUriPath : "${env:ENTRY_POINT_URI_PATH}"
+    scopes: '${env:CTP_SCOPE}',
+    entryPointUriPath: '${env:ENTRY_POINT_URI_PATH}',
   },
 
   oAuthScopes: {
@@ -59,14 +59,18 @@ const config = {
   mainMenuLink: {
     defaultLabel: 'Template starter',
     labelAllLocales: [],
-    permissions: [entryPointUriPathToPermissionKeys("${env:ENTRY_POINT_URI_PATH}").View],
+    permissions: [
+      entryPointUriPathToPermissionKeys('${env:ENTRY_POINT_URI_PATH}').View,
+    ],
   },
   submenuLinks: [
     {
       uriPath: 'channels',
       defaultLabel: 'Channels',
       labelAllLocales: [],
-      permissions: [entryPointUriPathToPermissionKeys("${env:ENTRY_POINT_URI_PATH}").View],
+      permissions: [
+        entryPointUriPathToPermissionKeys('${env:ENTRY_POINT_URI_PATH}').View,
+      ],
     },
   ],
 };

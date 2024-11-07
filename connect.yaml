@@ -15,8 +15,6 @@ deployAs:
         - key: ENTRY_POINT_URI_PATH
           description: The Application entry point URI path
           required: true
-        - key: CTP_REGION
-          description: commercetools Composable Commerce API region
         - key: CTP_PROJECT_KEY
           description: commercetools Composable Commerce project key
         - key: CTP_CLIENT_ID
