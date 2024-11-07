@@ -31,7 +31,7 @@ const config = {
   },
   env: {
     development: {
-      initialProjectKey: '${env:CTP_PROJECT_KEY}',
+      initialProjectKey: 'jj-custom-app',
     },
     production: {
       applicationId: '${env:CUSTOM_APPLICATION_ID}',
